@@ -2,7 +2,7 @@
 
 import { Spinner } from '@/components/spinner'
 import { Button } from '@/components/ui/button'
-import { SignInButton } from '@clerk/nextjs'
+import { SignUpButton } from '@clerk/nextjs'
 import { useConvexAuth } from 'convex/react'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -32,12 +32,12 @@ const Heading = () => {
         </Button>
       )}
       {!isAuthenticated && !isLoading && (
-        <SignInButton mode="modal">
+        <SignUpButton mode="modal">
           <Button size="sm">
             Get Jotion free
             <ArrowRight className='h-4 w-4 ml-2'/>
           </Button>
-        </SignInButton>
+        </SignUpButton>
       )}
 
     </div>
