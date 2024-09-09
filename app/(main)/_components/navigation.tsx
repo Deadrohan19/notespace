@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
+import { useSearch } from "@/hooks/use-search";
 
 import { useMutation} from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -30,6 +31,7 @@ export const Navigation = () => {
   const navbarRef = useRef<ElementRef<"div">>(null);
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
+  const search = useSearch();
 
   const create = useMutation(api.documents.create);
 
@@ -144,7 +146,7 @@ export const Navigation = () => {
         <div>
           <UserItem />
           <Item
-            onClick = {() => {}}
+            onClick = {search.onOpen}
             label = "Search"
             isSearch
             icon = {Search}
