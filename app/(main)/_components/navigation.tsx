@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 import { useMutation} from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -32,6 +33,7 @@ export const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
   const search = useSearch();
+  const settings = useSettings();
 
   const create = useMutation(api.documents.create);
 
@@ -152,7 +154,7 @@ export const Navigation = () => {
             icon = {Search}
           />
           <Item
-            onClick = {() => {}}
+            onClick = {settings.onOpen}
             label = "Settings"
             icon = {Settings}
           />
