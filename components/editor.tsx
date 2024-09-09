@@ -51,6 +51,11 @@ const Editor = (
         uploadFile: handleUpload,
     })
 
+    const handleChange = () => {
+        const content = JSON.stringify(editor.document);
+        onChange(content)
+    }
+
 
   return (
     <div>
@@ -58,7 +63,7 @@ const Editor = (
             editor={editor}
             theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
             editable={editable}
-            onChange={(editor: BlockNoteEditor) => { onChange(JSON.stringify(editor.topLevelBlocks, null, 2))}}
+            onChange={handleChange}
         />
     </div>
   )
