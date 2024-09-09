@@ -1,7 +1,7 @@
 import React, { ElementRef, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useMediaQuery } from "usehooks-ts";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
@@ -27,6 +27,7 @@ import Navbar from "./navbar";
 export const Navigation = () => {
   const pathname = usePathname();
   const params = useParams();
+  const router = useRouter();
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   const isResizingRef = useRef(false);
@@ -118,7 +119,10 @@ export const Navigation = () => {
   };
 
   const onCreate = () => {
-    const promise = create({title: "Untitled"});
+    const promise = create({title: "Untitled"})
+      .then((documentId) => {
+        router.push(`/documents/${documentId}`)
+      })
 
     toast.promise(promise, {
       loading: "Creating a new note...",
