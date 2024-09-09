@@ -32,7 +32,7 @@ const DocumentsPage = () => {
         className="dark:hidden"
       />
       <Image
-        src="/empty.png"
+        src="/empty-dark.png"
         alt="Empty"
         width="300"
         height="300"
