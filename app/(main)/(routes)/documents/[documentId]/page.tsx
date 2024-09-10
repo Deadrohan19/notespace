@@ -16,7 +16,7 @@ interface DocumentIdPageProps {
 };
 const Editor = dynamic(() => import('@/components/editor'), {ssr: false});
 
-export const DocumentIdPage = ({params}: DocumentIdPageProps) => {
+const DocumentIdPage = ({params}: DocumentIdPageProps) => {
   const document = useQuery(api.documents.getById, {id: params.documentId});
   const update = useMutation(api.documents.update);
 
