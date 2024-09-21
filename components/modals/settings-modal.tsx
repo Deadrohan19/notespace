@@ -24,7 +24,7 @@ export const SettingsModal = () => {
                             Appearance
                         </Label>
                         <span className="text-[0.8rem] text-muted-foreground">
-                            Customize how Jotion looks on you device
+                            Customize how NoteSpace looks on you device
                         </span>
                     </div>
                     <ModeToggle />

@@ -21,22 +21,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jotion",
-  description: "A simple multi-page note taking app having markdown functionality",
-  icons: {
-    icon: [
-      {
-        media: "prefers-color-scheme: light",
-        url: "/logo.svg",
-        href: "/logo.svg",
-      },
-      {
-        media: "prefers-color-scheme: dark",
-        url: "/logo-dark.svg",
-        href: "/logo-dark.svg",
-      }
-    ]
-  }
+  title: "NoteSpace",
+  description: "A simple multi-page note taking app",
 };
 
 export default function RootLayout({
@@ -56,7 +42,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          storageKey="jotion-theme"
+          storageKey="notespace-theme"
         >
           <Toaster position="bottom-center" />
           <ModalProvider />

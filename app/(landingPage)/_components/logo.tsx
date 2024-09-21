@@ -10,21 +10,13 @@ const Logo = () => {
     return (
         <div className="hidden md:flex items-center gap-x-2">
             <Image
-                src="/logo.svg"
-                alt="Jotion"
-                width={40}
-                height={40}
-                className="dark:hidden"
-            />
-            <Image
-                src="/logo-dark.svg"
-                alt="Jotion"
-                width={40}
-                height={40}
-                className="hidden dark:block"
+                src="/logo.png"
+                alt="NoteSpace"
+                width={50}
+                height={50}
             />
             <p className={cn("font-semibold", font.className)}>
-                Jotion
+                NoteSpace
             </p>
         </div>
     )

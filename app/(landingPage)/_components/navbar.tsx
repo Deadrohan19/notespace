@@ -33,7 +33,7 @@ const Navbar = () => {
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button size="sm">Get Jotion free</Button>
+              <Button size="sm">Get NoteSpace free</Button>
             </SignUpButton>
           </>
         )}
@@ -41,7 +41,7 @@ const Navbar = () => {
             <>
             <Button variant={"ghost"} size="sm" asChild>
               <Link href="/documents">
-                Enter Jotion
+                Enter NoteSpace
               </Link>
             </Button>
             <UserButton />
