@@ -44,11 +44,11 @@ export const UserItem = () => {
                 </div>
             </div>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="w-full cursor-pointer text-muted-foreground" >
-                <SignOutButton>
+            <SignOutButton>
+                <DropdownMenuItem className="w-full cursor-pointer text-muted-foreground" >
                     Log Out
-                </SignOutButton>
-            </DropdownMenuItem>
+                </DropdownMenuItem>
+            </SignOutButton>
         </DropdownMenuContent>
     </DropdownMenu>
   )
