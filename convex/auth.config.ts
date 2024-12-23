@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: "https://clerk.notespace.rohanjaiswal.in",
+      domain: process.env.AUTHENTICATION_DOMAIN,
       applicationID: "convex",
     },
   ]
