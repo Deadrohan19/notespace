@@ -1,14 +1,18 @@
 "use client"
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { SignOutButton, useUser } from "@clerk/nextjs"
+import { SignOutButton, useClerk, useUser } from "@clerk/nextjs"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronsLeftRight } from "lucide-react";
+import { useState } from "react";
 
 export const UserItem = () => {
     const {user} = useUser();
+    const { openUserProfile } = useClerk();
+    const [ open, setOpen ] = useState(false);
+
   return (
-    <DropdownMenu>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
             <div role="button" className="flex items-center text-sm p-3 w-full hover:bg-primary/5">
                 <div className="gap-x-2 flex items-center max-w-[150px]">
@@ -30,7 +34,7 @@ export const UserItem = () => {
                 <p className="text-xs font-medium leading-none text-muted-foreground ">
                     {user?.emailAddresses[0].emailAddress}
                 </p>
-                <div className="flex items-center gap-x-2">
+                <div className="flex items-center gap-x-2 cursor-pointer" onClick={() => {setOpen(false);  openUserProfile()}}>
                     <div className="rounded-md bg-secondary p-1">
                         <Avatar className="h-8 w-8">
                             <AvatarImage src={user?.imageUrl} />
