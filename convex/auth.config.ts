@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: "https://regular-dassie-15.clerk.accounts.dev",
+      domain: "https://clerk.notespace.rohanjaiswal.in",
       applicationID: "convex",
     },
   ]
